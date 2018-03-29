@@ -16,7 +16,7 @@ weatherConditions.onload = function() {
         cObj = JSON.parse(weatherConditions.responseText); 
         console.log(cObj);
 
-
+        document.getElementById('location').innerHTML = cObj.current_observation.display_location.full;
     } //end if
 }; //end function
 
