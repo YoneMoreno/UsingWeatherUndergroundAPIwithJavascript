@@ -17,6 +17,7 @@ weatherConditions.onload = function() {
         console.log(cObj);
 
         document.getElementById('location').innerHTML = cObj.current_observation.display_location.full;
+        document.getElementById('weather').innerHTML = cObj.current_observation.weather;
     } //end if
 }; //end function
 
