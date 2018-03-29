@@ -1,35 +1,33 @@
+/*jslint browser:true */
 'use strict';
 
-// JavaScript Document
-var hotelInfo;
-var details;
-var xhr = new XMLHttpRequest();
-xhr.open('GET', "data.json", true);
-xhr.responseType = 'text';
-xhr.send();
+var weatherConditions = new XMLHttpRequest();
+var weatherForecast = new XMLHttpRequest();
+var cObj;
+var fObj;
 
-xhr.onload = function () {
-    if (xhr.status === 200) {
-        hotelInfo = JSON.parse(xhr.responseText);
-        console.log(hotelInfo);
-        display(0);
-    } // end if
-}; // end function
+// GET THE CONDITIONS
+weatherConditions.open('', '', true);
+weatherConditions.responseType = 'text';
+weatherConditions.send(null);
 
-function display(numberOfRoom) {
-    console.log(numberOfRoom);
-    document.getElementById('roomName').innerHTML = hotelInfo[numberOfRoom].name;
-    document.getElementById('desc').innerHTML = hotelInfo[numberOfRoom].description;
-    document.getElementById('photo').src = hotelInfo[numberOfRoom].photo;
+weatherConditions.onload = function () {
+    if (weatherConditions.status === 200) {
+        cObj = JSON.parse(weatherConditions.responseText);
+        console.log(cObj);
+    } //end if
+}; //end function
 
-    document.getElementById('weekday').innerHTML = hotelInfo[numberOfRoom].cost.weekday;
-    document.getElementById('weekend').innerHTML = hotelInfo[numberOfRoom].cost.weekend;
 
-    details = "";
-    for (var i = 0; i < hotelInfo[numberOfRoom].details.length; i++) {
-        console.log(hotelInfo[numberOfRoom].details[i]);
-        details += "<p>" + hotelInfo[numberOfRoom].details[i] + "</p>";
-    }
-    document.getElementById('details').innerHTML = details;
-}
+// GET THE FORECARST
+weatherForecast.open('', '', true);
+weatherForecast.responseType = 'text';
+weatherForecast.send();
+
+weatherForecast.onload = function () {
+    if (weatherForecast.status === 200) {
+        fObj = JSON.parse(weatherForecast.responseText);
+        console.log(fObj);
+    } //end if
+}; //end function
 //# sourceMappingURL=main.js.map
