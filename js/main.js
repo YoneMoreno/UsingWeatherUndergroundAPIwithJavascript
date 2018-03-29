@@ -23,4 +23,11 @@ function display(numberOfRoom){
 
     document.getElementById('weekday').innerHTML = hotelInfo[numberOfRoom].cost.weekday;
     document.getElementById('weekend').innerHTML = hotelInfo[numberOfRoom].cost.weekend;
+
+    details = "";
+    for(var i = 0; i < hotelInfo[numberOfRoom].details.length; i++){
+        console.log(hotelInfo[numberOfRoom].details[i]);
+        details += "<p>" + hotelInfo[numberOfRoom].details[i] + "</p>";
+    }
+    document.getElementById('details').innerHTML = details;
 }
