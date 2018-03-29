@@ -18,5 +18,6 @@ xhr.onload = function () {
 function display(numberOfRoom) {
     console.log(numberOfRoom);
     document.getElementById('roomName').innerHTML = hotelInfo[numberOfRoom].name;
+    document.getElementById('desc').innerHTML = hotelInfo[numberOfRoom].description;
 }
 //# sourceMappingURL=main.js.map
