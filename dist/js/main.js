@@ -7,7 +7,7 @@ var cObj;
 var fObj;
 
 // GET THE CONDITIONS
-weatherConditions.open('', '', true);
+weatherConditions.open('GET', 'http://api.wunderground.com/api/9c4c0d8587580fce/conditions/q/84653.json', true);
 weatherConditions.responseType = 'text';
 weatherConditions.send(null);
 
@@ -20,7 +20,7 @@ weatherConditions.onload = function () {
 
 
 // GET THE FORECARST
-weatherForecast.open('', '', true);
+weatherForecast.open('GET', 'http://api.wunderground.com/api/9c4c0d8587580fce/forecast/q/84653.json', true);
 weatherForecast.responseType = 'text';
 weatherForecast.send();
 
