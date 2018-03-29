@@ -19,5 +19,6 @@ function display(numberOfRoom) {
     console.log(numberOfRoom);
     document.getElementById('roomName').innerHTML = hotelInfo[numberOfRoom].name;
     document.getElementById('desc').innerHTML = hotelInfo[numberOfRoom].description;
+    document.getElementById('photo').src = hotelInfo[numberOfRoom].photo;
 }
 //# sourceMappingURL=main.js.map
