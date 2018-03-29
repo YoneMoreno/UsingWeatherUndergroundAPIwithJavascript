@@ -1,12 +1,10 @@
+var xhr = new XMLHttpRequest();
+xhr.open('GET','data.json',true);
 
-var theData2 =
-    '{"Jane":' +
-    '{"age":"30",' +
-    '"degree":{"physics":"Virginia","Math":"Utah"}},' +
-    '"Jim":' +
-    '{"age":"60","degree":"pharmacy"}}';
-var myObj = JSON.parse(theData2);
-console.log(myObj);
+xhr.send();
 
-document.getElementById('message').innerHTML =
-    myObj.Jane.degree.physics;
+xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    console.log(xhr.status);
+    console.log(xhr.statusText);
+};
