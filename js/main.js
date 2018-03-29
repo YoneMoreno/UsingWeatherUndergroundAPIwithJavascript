@@ -20,4 +20,7 @@ function display(numberOfRoom){
     document.getElementById('roomName').innerHTML = hotelInfo[numberOfRoom].name;
     document.getElementById('desc').innerHTML = hotelInfo[numberOfRoom].description;
     document.getElementById('photo').src = hotelInfo[numberOfRoom].photo;
+
+    document.getElementById('weekday').innerHTML = hotelInfo[numberOfRoom].cost.weekday;
+    document.getElementById('weekend').innerHTML = hotelInfo[numberOfRoom].cost.weekend;
 }
