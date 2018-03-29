@@ -14,4 +14,9 @@ xhr.onload = function () {
         console.log(hotelInfo);
     } // end if
 }; // end function
+
+function display(numberOfRoom) {
+    console.log(numberOfRoom);
+    document.getElementById('roomName').innerHTML = hotelInfo[numberOfRoom].name;
+}
 //# sourceMappingURL=main.js.map

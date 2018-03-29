@@ -14,3 +14,8 @@ xhr.onload = function() {
   
     } // end if
 } // end function
+
+function display(numberOfRoom){
+    console.log(numberOfRoom);
+    document.getElementById('roomName').innerHTML = hotelInfo[numberOfRoom].name;
+}
